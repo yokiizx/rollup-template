@@ -4,7 +4,7 @@
   "description": "A template repository of Rollup + ES build + TS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c"
   },
   "keywords": [
     "rollup",
@@ -12,6 +12,9 @@
     "ts",
     "typescript"
   ],
+  "type": "module",
   "author": "yokiizx",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
 }
