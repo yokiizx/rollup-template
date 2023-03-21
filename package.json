@@ -1,0 +1,17 @@
+{
+  "name": "rollup-template",
+  "version": "0.0.1",
+  "description": "A template repository of Rollup + ES build + TS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rollup",
+    "esbuild",
+    "ts",
+    "typescript"
+  ],
+  "author": "yokiizx",
+  "license": "MIT"
+}
