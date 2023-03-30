@@ -5,7 +5,7 @@ import typescript from '@rollup/plugin-typescript'
 import babel from '@rollup/plugin-babel'
 import terser from '@rollup/plugin-terser'
 
-const IS_PRO = process.env.NODE_ENV === 'production'
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
 export default {
   input: 'src/index.ts',
@@ -19,14 +19,15 @@ export default {
   ],
   plugins: [
     resolve(),
-    commonjs(),
+    commonjs({
+      include: 'node_modules/**'
+    }),
     json(),
     typescript(), // ts first, then babel
     babel({
-      babelHelpers: 'bundled',
       exclude: 'node_modules/**'
     }),
-    IS_PRO && terser()
+    IS_PRODUCTION && terser()
   ],
   external: [], // external module
   watch: {

@@ -1,20 +1,17 @@
 {
   "name": "rollup-template",
   "version": "0.0.1",
-  "description": "A template repository of Rollup + ES build + TS",
+  "description": "A template repository of Rollup + TS",
   "main": "index.js",
   "scripts": {
     "babel": "babel src -x \".ts, .tsx\"",
     "tsc": "tsc --pretty",
-    "rollup": "rollup -c",
-    "build:all": "npm run babel && npm run tsc && npm run build",
-    "build": "NODE_ENV=production rollup -c",
+    "rollup": "cross-env NODE_ENV=production rollup -c",
+    "build": "npm run babel && npm run tsc && npm run rollup",
     "dev": "NODE_ENV=dev rollup -c -w"
   },
   "keywords": [
     "rollup",
-    "esbuild",
-    "ts",
     "typescript"
   ],
   "type": "module",
@@ -31,6 +28,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
+    "cross-env": "^7.0.3",
     "rollup": "^3.20.0",
     "tslib": "^2.5.0",
     "typescript": "^5.0.2"
